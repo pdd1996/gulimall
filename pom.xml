@@ -11,7 +11,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>gulimail-coupon</module>
+        <module>gulimall-coupon</module>
         <module>gulimall-member</module>
         <module>gulimall-order</module>
         <module>gulimall-product</module>
