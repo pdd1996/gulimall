@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.atguigu.gulimall</groupId>
-    <artifactId>gulimail-coupon</artifactId>
+    <artifactId>gulimall-coupon</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>gulimail-coupon</name>
-    <description>gulimail-coupon</description>
+    <name>gulimall-coupon</name>
+    <description>gulimall-coupon</description>
 
     <properties>
         <java.version>1.8</java.version>
