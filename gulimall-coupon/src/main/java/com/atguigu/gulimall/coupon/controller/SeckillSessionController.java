@@ -20,11 +20,12 @@ import com.atguigu.common.utils.R;
 /**
  * 秒杀活动场次
  *
- * @author paddy
- * @email paddy@gmail.com
- * @date 2024-04-07 07:49:57
+ * @author Ethan
+ * @email hongshengmo@163.com
+ * @date 2020-05-27 20:03:33
  */
 @RestController
+@RequestMapping("coupon/seckillsession")
 public class SeckillSessionController {
     @Autowired
     private SeckillSessionService seckillSessionService;
@@ -33,7 +34,6 @@ public class SeckillSessionController {
      * 列表
      */
     @RequestMapping("/list")
-    //@RequiresPermissions("coupon:seckillpromotion:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = seckillSessionService.queryPage(params);
 
@@ -45,7 +45,6 @@ public class SeckillSessionController {
      * 信息
      */
     @RequestMapping("/info/{id}")
-    //@RequiresPermissions("coupon:seckillpromotion:info")
     public R info(@PathVariable("id") Long id){
 		SeckillSessionEntity seckillSession = seckillSessionService.getById(id);
 
@@ -56,7 +55,6 @@ public class SeckillSessionController {
      * 保存
      */
     @RequestMapping("/save")
-    //@RequiresPermissions("coupon:seckillpromotion:save")
     public R save(@RequestBody SeckillSessionEntity seckillSession){
 		seckillSessionService.save(seckillSession);
 
@@ -67,7 +65,6 @@ public class SeckillSessionController {
      * 修改
      */
     @RequestMapping("/update")
-    //@RequiresPermissions("coupon:seckillpromotion:update")
     public R update(@RequestBody SeckillSessionEntity seckillSession){
 		seckillSessionService.updateById(seckillSession);
 
@@ -78,7 +75,6 @@ public class SeckillSessionController {
      * 删除
      */
     @RequestMapping("/delete")
-    //@RequiresPermissions("coupon:seckillpromotion:delete")s
     public R delete(@RequestBody Long[] ids){
 		seckillSessionService.removeByIds(Arrays.asList(ids));
 

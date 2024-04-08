@@ -20,11 +20,12 @@ import com.atguigu.common.utils.R;
 /**
  * 商品满减信息
  *
- * @author paddy
- * @email paddy@gmail.com
- * @date 2024-04-07 07:49:57
+ * @author Ethan
+ * @email hongshengmo@163.com
+ * @date 2020-05-27 20:03:33
  */
 @RestController
+@RequestMapping("coupon/skufullreduction")
 public class SkuFullReductionController {
     @Autowired
     private SkuFullReductionService skuFullReductionService;

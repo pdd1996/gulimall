@@ -1,22 +1,28 @@
 package com.atguigu.gulimall.coupon.controller;
 
-import com.atguigu.common.utils.PageUtils;
-import com.atguigu.common.utils.R;
-import com.atguigu.gulimall.coupon.entity.CouponSpuCategoryRelationEntity;
-import com.atguigu.gulimall.coupon.service.CouponSpuCategoryRelationService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.Arrays;
 import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.atguigu.gulimall.coupon.entity.CouponSpuCategoryRelationEntity;
+import com.atguigu.gulimall.coupon.service.CouponSpuCategoryRelationService;
+import com.atguigu.common.utils.PageUtils;
+import com.atguigu.common.utils.R;
+
 
 
 /**
  * 优惠券分类关联
  *
- * @author 夏沫止水
- * @email HeJieLin@gulimall.com
- * @date 2020-05-22 19:35:30
+ * @author Ethan
+ * @email hongshengmo@163.com
+ * @date 2020-05-27 20:03:33
  */
 @RestController
 @RequestMapping("coupon/couponspucategoryrelation")
@@ -28,7 +34,6 @@ public class CouponSpuCategoryRelationController {
      * 列表
      */
     @RequestMapping("/list")
-    //@RequiresPermissions("coupon:couponspucategoryrelation:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = couponSpuCategoryRelationService.queryPage(params);
 
@@ -40,9 +45,8 @@ public class CouponSpuCategoryRelationController {
      * 信息
      */
     @RequestMapping("/info/{id}")
-    //@RequiresPermissions("coupon:couponspucategoryrelation:info")
     public R info(@PathVariable("id") Long id){
-        CouponSpuCategoryRelationEntity couponSpuCategoryRelation = couponSpuCategoryRelationService.getById(id);
+		CouponSpuCategoryRelationEntity couponSpuCategoryRelation = couponSpuCategoryRelationService.getById(id);
 
         return R.ok().put("couponSpuCategoryRelation", couponSpuCategoryRelation);
     }
@@ -51,9 +55,8 @@ public class CouponSpuCategoryRelationController {
      * 保存
      */
     @RequestMapping("/save")
-    //@RequiresPermissions("coupon:couponspucategoryrelation:save")
     public R save(@RequestBody CouponSpuCategoryRelationEntity couponSpuCategoryRelation){
-        couponSpuCategoryRelationService.save(couponSpuCategoryRelation);
+		couponSpuCategoryRelationService.save(couponSpuCategoryRelation);
 
         return R.ok();
     }
@@ -62,9 +65,8 @@ public class CouponSpuCategoryRelationController {
      * 修改
      */
     @RequestMapping("/update")
-    //@RequiresPermissions("coupon:couponspucategoryrelation:update")
     public R update(@RequestBody CouponSpuCategoryRelationEntity couponSpuCategoryRelation){
-        couponSpuCategoryRelationService.updateById(couponSpuCategoryRelation);
+		couponSpuCategoryRelationService.updateById(couponSpuCategoryRelation);
 
         return R.ok();
     }
@@ -73,9 +75,8 @@ public class CouponSpuCategoryRelationController {
      * 删除
      */
     @RequestMapping("/delete")
-    //@RequiresPermissions("coupon:couponspucategoryrelation:delete")
     public R delete(@RequestBody Long[] ids){
-        couponSpuCategoryRelationService.removeByIds(Arrays.asList(ids));
+		couponSpuCategoryRelationService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }
