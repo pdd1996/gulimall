@@ -3,7 +3,6 @@ package com.atguigu.gulimall.coupon.controller;
 import java.util.Arrays;
 import java.util.Map;
 
-import com.atguigu.gulimall.coupon.feign.CouponFeignService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -32,9 +31,10 @@ public class CouponController {
     private CouponService couponService;
 
     @RequestMapping("/member/list")
-    public R MemberCoupons(){
+    public R membercoupons(){
         CouponEntity couponEntity = new CouponEntity();
         couponEntity.setCouponName("满100减10");
+        System.out.println(couponEntity);
         return R.ok().put("coupons", Arrays.asList(new CouponEntity()));
     }
     /**
